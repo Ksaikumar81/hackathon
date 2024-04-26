@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body%}
+
+<section>
+    <label class="t1">Customers Detail</label>
+    <div class="table-container">
+        <table class="table1">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Acc. Bal</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for i in customers %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.avail_bal}}₹</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</section>
+
+<style>
+    .table-container {
+        max-width: 8500px; /* Change the value according to your needs */
+        margin: auto;
+    }
+
+    .table1 {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table1 th,
+    .table1 td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .table1 th {
+        background-color: black;
+    }
+</style>
+
+{% endblock body %}

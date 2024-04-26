@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+<html>
+    <head>
+        <title>
+            LOGIN
+        </title>
+
+    </head>
+    <body >
+    {% block body %}
+        {% if messages %}
+  {% for message in messages %}
+   {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+  {% endfor %}
+
+{% endif %}
+        <div class="container1">
+            <center>
+            <div class="bodycontainer">
+                <h1>Login</h1>
+                <form action="{% url 'index' %}"  method="post">
+                    {% csrf_token %}
+                    <label>Usename</label><br>
+                    <input type="textname="username" placeholder="username"><br><br>
+                    <label>Password</label><br>
+                    <input type="password" placeholder="Password" name="password"><br><br>
+                    <button type="submit" name="SUBMIT">SUBMIT</button>
+
+                </form>
+            </div>
+        </center></div>
+    {% endblock %}
+    </body>
+</html>
